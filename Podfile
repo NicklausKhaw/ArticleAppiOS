@@ -12,7 +12,8 @@ target 'ArticleApp' do
 
   target 'ArticleAppTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'RxBlocking', '~> 6.0'
+    pod 'RxTest', '~> 6.0'
   end
 
   target 'ArticleAppUITests' do

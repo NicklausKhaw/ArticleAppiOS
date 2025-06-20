@@ -23,6 +23,19 @@ struct Article: Codable {
         case byline
         case media
     }
+
+    // Memberwise initializer for testing
+    init(id: Int, title: String, abstract: String, url: String, publishedDate: String, section: String, subsection: String?, byline: String?, media: [Media]?) {
+        self.id = id
+        self.title = title
+        self.abstract = abstract
+        self.url = url
+        self.publishedDate = publishedDate
+        self.section = section
+        self.subsection = subsection
+        self.byline = byline
+        self.media = media
+    }
 }
 
 struct Media: Codable {
@@ -147,6 +160,29 @@ struct ArticleSearchDoc: Codable {
             self.multimedia = nil
         }
     }
+
+    // Memberwise initializer for testing
+    init(webUrl: String, snippet: String, leadParagraph: String?, abstract: String?, printPage: String?, source: String?, multimedia: [Multimedia]?, headline: Headline, keywords: [Keyword]?, pubDate: String, documentType: String, newsDesk: String?, sectionName: String?, subsectionName: String?, byline: Byline?, typeOfMaterial: String?, id: String, wordCount: Int?, uri: String?) {
+        self.webUrl = webUrl
+        self.snippet = snippet
+        self.leadParagraph = leadParagraph
+        self.abstract = abstract
+        self.printPage = printPage
+        self.source = source
+        self.multimedia = multimedia
+        self.headline = headline
+        self.keywords = keywords
+        self.pubDate = pubDate
+        self.documentType = documentType
+        self.newsDesk = newsDesk
+        self.sectionName = sectionName
+        self.subsectionName = subsectionName
+        self.byline = byline
+        self.typeOfMaterial = typeOfMaterial
+        self.id = id
+        self.wordCount = wordCount
+        self.uri = uri
+    }
 }
 
 struct Headline: Codable {
@@ -166,6 +202,17 @@ struct Headline: Codable {
         case name
         case seo
         case sub
+    }
+
+    // Memberwise initializer for testing
+    init(main: String, kicker: String? = nil, contentKicker: String? = nil, printHeadline: String? = nil, name: String? = nil, seo: String? = nil, sub: String? = nil) {
+        self.main = main
+        self.kicker = kicker
+        self.contentKicker = contentKicker
+        self.printHeadline = printHeadline
+        self.name = name
+        self.seo = seo
+        self.sub = sub
     }
 }
 

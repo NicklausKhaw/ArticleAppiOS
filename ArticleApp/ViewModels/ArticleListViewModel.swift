@@ -12,9 +12,13 @@ class ArticleListViewModel {
     let selectedPeriod = BehaviorRelay<Int>(value: 7)
 
     // MARK: - Private Properties
-    private let networkService = NetworkService.shared
+    private let networkService: NetworkServiceProtocol
     private let disposeBag = DisposeBag()
     private var currentArticleType: ArticleType?
+
+    init(networkService: NetworkServiceProtocol = NetworkService.shared) {
+        self.networkService = networkService
+    }
 
     // MARK: - Configuration
     func configureForMostPopular(type: ArticleType) {
@@ -62,7 +66,7 @@ class ArticleListViewModel {
         errorMessage.accept(nil)
         searchArticles.accept([]) // Clear previous results
 
-        networkService.searchArticles(query: query) { [weak self] result in
+        networkService.searchArticles(query: query, page: 0) { [weak self] result in
             DispatchQueue.main.async {
                 self?.isLoading.accept(false)
                 switch result {

@@ -1,6 +1,6 @@
 import Foundation
 
-class NetworkService {
+class NetworkService: NetworkServiceProtocol {
     static let shared = NetworkService()
     
     private let baseURL = "https://api.nytimes.com/svc"
