@@ -22,8 +22,4 @@ class HomeViewModel {
     func clearSelection() {
         selectedArticleType.accept(nil)
     }
-    
-    func getArticleTypeDisplayName(_ type: ArticleType) -> String {
-        return type.displayName
-    }
 } 
