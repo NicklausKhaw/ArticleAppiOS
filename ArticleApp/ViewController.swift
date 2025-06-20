@@ -11,9 +11,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // This view controller is no longer used as the entry point.
+        // The root view controller is now set in SceneDelegate.swift.
     }
-
-
 }
 
